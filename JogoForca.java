@@ -57,8 +57,20 @@ public class JogoForca {
             if (!letraEncontrada) {
                 chancesRestantes--;
             }
-        }
 
+            // Verifica se o jogo acabou
+            boolean venceu = true;
+            for (int i = 0; i < tamPalavraSorteada; i++) {
+                if (letrasReveladas[i] == '?') {
+                    venceu = false;
+                    break;
+                }
+            }
+            if (venceu) {
+                System.out.println("Parabens, voce venceu!");
+                break;
+            }
+        }
         System.out.println("===========");
         System.out.println(" Game Over ");
         System.out.println("===========");
