@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.HashSet;
 
 public class JogoForca {
     public static void main (String[] args) {
@@ -28,6 +29,7 @@ public class JogoForca {
             letrasReveladas[i] = '?';
         }
 
+        HashSet<Character> letrasUsadas = new HashSet<>();
 
 		// Loop do jogo
         while (chancesRestantes > 0) {
@@ -71,6 +73,11 @@ public class JogoForca {
                 System.out.println("Parabens, voce venceu!");
                 break;
             }
+            if (letrasUsadas.contains(letraDigitada)) {
+                System.out.println("Você já tentou essa letra.");
+                continue;
+            }
+            letrasUsadas.add(letraDigitada);
         }
         System.out.println("===========");
         System.out.println(" Game Over ");
