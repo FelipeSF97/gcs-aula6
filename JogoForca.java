@@ -78,6 +78,11 @@ public class JogoForca {
                 continue;
             }
             letrasUsadas.add(letraDigitada);
+            if (strLetraDigitada.length() != 1) {
+                System.out.println("Digite apenas uma letra!");
+                continue;
+            }
+            
         }
         System.out.println("===========");
         System.out.println(" Game Over ");
